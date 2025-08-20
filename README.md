@@ -13,6 +13,7 @@ This template provides a modern setup for building React applications with Vite,
 - **Lucide React** icons
 - **Utility libraries:** [clsx](https://github.com/lukeed/clsx), [class-variance-authority](https://cva.style/)
 - **Biome** for linting and formatting
+- **Vitest** for testing
 
 ## Getting Started
 
