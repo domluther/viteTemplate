@@ -13,6 +13,7 @@ This template provides a modern setup for building React applications with Vite,
 - **Lucide React** icons
 - **Utility libraries:** [clsx](https://github.com/lukeed/clsx), [class-variance-authority](https://cva.style/)
 - **Biome** for linting and formatting
+- **Vitest + Testing Library** for unit and component testing
 - **Vitest** for testing
 
 ## Getting Started
@@ -52,6 +53,19 @@ npm run format
 npm run type-check
 ```
 
+### Testing
+
+```bash
+# Run tests in watch mode
+npm run test
+
+# Run tests once
+npm run test:run
+
+# Run tests with UI
+npm run test:ui
+```
+
 ## Project Structure
 
 - `src/` — Main source code
@@ -74,6 +88,8 @@ npm run type-check
 - @biomejs/biome
 - @tanstack/router-plugin
 - tw-animate-css
+- vitest, @vitest/ui, jsdom
+- @testing-library/react, @testing-library/jest-dom
 - globals
 
 ## Linting & Formatting
@@ -87,6 +103,16 @@ App routes are defined in `src/routes/` using TanStack React Router. See [TanSta
 ## Tailwind CSS
 
 Tailwind is configured via `@tailwindcss/vite` and supports advanced merging and animation utilities.
+
+## Documentation for AI Agents
+
+This template includes comprehensive documentation for AI agents to port existing projects:
+
+- **[AI_AGENT_GUIDE.md](./AI_AGENT_GUIDE.md)** - Complete migration guide for AI agents
+- **[MIGRATION_CHECKLIST.md](./MIGRATION_CHECKLIST.md)** - Step-by-step checklist for project migration
+- **[QUICK_REFERENCE.md](./QUICK_REFERENCE.md)** - API references and code patterns
+
+These docs are specifically designed to help future AI agents (Claude Sonnet 4+) understand how to port legacy projects to this modern React template.
 
 ---
 
