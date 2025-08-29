@@ -14,7 +14,7 @@ This template provides a modern setup for building React applications with Vite,
 - **Utility libraries:** [clsx](https://github.com/lukeed/clsx), [class-variance-authority](https://cva.style/)
 - **Biome** for linting and formatting
 - **Vitest + Testing Library** for unit and component testing
-- **Vitest** for testing
+- **Dark/Light Theme Support** with system preference detection
 
 ## Getting Started
 
@@ -103,6 +103,44 @@ App routes are defined in `src/routes/` using TanStack React Router. See [TanSta
 ## Tailwind CSS
 
 Tailwind is configured via `@tailwindcss/vite` and supports advanced merging and animation utilities.
+
+## Theme Support
+
+This template includes a complete theme system with:
+
+- **Light/Dark/System modes** - Automatically detects and respects system preference
+- **Persistent storage** - Theme choice saved to localStorage
+- **Semantic color tokens** - Uses CSS variables for consistent theming
+- **Ready-to-use components** - `ThemeToggle` and `SimpleThemeToggle` components
+
+### Using Themes
+
+```tsx
+import { useTheme } from '@/contexts/theme-provider'
+import { ThemeToggle } from '@/components/theme-toggle'
+
+function MyComponent() {
+  const { theme, setTheme } = useTheme()
+  
+  return (
+    <div>
+      <p>Current theme: {theme}</p>
+      <ThemeToggle />
+    </div>
+  )
+}
+```
+
+### Theme Colors
+
+All theme colors are semantic and automatically switch between light/dark:
+
+- `bg-background` / `text-foreground` - Main background/text
+- `bg-card` / `text-card-foreground` - Card backgrounds
+- `bg-primary` / `text-primary-foreground` - Primary actions
+- `bg-secondary` / `text-secondary-foreground` - Secondary elements
+- `bg-muted` / `text-muted-foreground` - Subtle backgrounds
+- `bg-accent` / `text-accent-foreground` - Accent highlights
 
 ## Documentation for AI Agents
 

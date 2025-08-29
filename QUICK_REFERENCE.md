@@ -141,6 +141,62 @@ function Button({ className, variant, size, ...props }) {
 }
 ```
 
+## Theme System
+
+### Theme Provider Setup
+```tsx
+import { ThemeProvider } from '@/contexts/theme-provider'
+
+function App() {
+  return (
+    <ThemeProvider defaultTheme="system" storageKey="ui-theme">
+      <YourApp />
+    </ThemeProvider>
+  )
+}
+```
+
+### Using Theme Hook
+```tsx
+import { useTheme } from '@/contexts/theme-provider'
+
+function MyComponent() {
+  const { theme, setTheme } = useTheme()
+  
+  return (
+    <div>
+      <p>Current theme: {theme}</p>
+      <button onClick={() => setTheme('light')}>Light</button>
+      <button onClick={() => setTheme('dark')}>Dark</button>
+      <button onClick={() => setTheme('system')}>System</button>
+    </div>
+  )
+}
+```
+
+### Theme Components
+```tsx
+import { ThemeToggle, SimpleThemeToggle } from '@/components/theme-toggle'
+
+// Full toggle with all options
+<ThemeToggle />
+
+// Simple cycling toggle
+<SimpleThemeToggle />
+```
+
+### Semantic Theme Colors
+```tsx
+// Use semantic color names that work in both light/dark
+<div className="bg-background text-foreground">
+  <div className="bg-card text-card-foreground p-4 rounded">
+    <h2 className="text-primary">Primary text</h2>
+    <p className="text-muted-foreground">Muted text</p>
+    <button className="bg-primary text-primary-foreground">Button</button>
+  </div>
+</div>
+```
+
 ## Testing Patterns
 
 ### Component Testing
